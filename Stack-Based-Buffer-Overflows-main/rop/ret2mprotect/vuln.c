@@ -7,8 +7,8 @@ int main(int argc, char **argv){
     int len, i;
     printf("Welcome in Birby Enterprise\n");
     printf("To join the company, please register with your full name: ");
-    gets(buffer);
-    len = strlen(buffer);
+    fgets(buffer, sizeof(buffer), stdin);
+    buffer[strcspn(buffer, "\n")] = 0;
     printf("Welcome %s in Birby Enterprise\n", buffer);
 
     return 0;
